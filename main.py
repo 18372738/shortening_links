@@ -6,7 +6,7 @@ import requests
 from dotenv import load_dotenv
 
 
-def createParser ():
+def create_parser ():
     parser = argparse.ArgumentParser()
     parser.add_argument ('name', nargs='?')
     return parser
@@ -50,11 +50,9 @@ def is_bitlink(token, url):
 if __name__ == '__main__':
     load_dotenv()
     token = os.environ['BITLY_API_TOKEN']
-    parser = createParser()
+    parser = create_parser()
     input_url = parser.parse_args()
-
-    if input_url.name:
-        url = f"{input_url.name}"
+    url = f"{input_url.name}"
 
     if is_bitlink(token, url):
         try:
