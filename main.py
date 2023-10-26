@@ -52,7 +52,7 @@ if __name__ == '__main__':
     token = os.environ['BITLY_API_TOKEN']
     parser = create_parser()
     input_url = parser.parse_args()
-    url = f"{input_url.name}"
+    url = input_url.name
 
     if is_bitlink(token, url):
         try:
